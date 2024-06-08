@@ -38,6 +38,6 @@ const schema = new mongoose.Schema({
     }
 });
 
-updateTimestamp(schema);
+updateTimestamp.updateTimestamp(schema);
 
 module.exports.model(modelName, schema);
