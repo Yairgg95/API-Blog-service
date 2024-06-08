@@ -19,10 +19,14 @@ async function getById(id) {
 }
 
 async function updatedById(id, newUserData) {
-    const updatedUser = await Users.findByIdAndUpdate(id, 
-        { ...newUserData, updated_at: Date.now() }, 
-        { new: true, runValidators: true }
-    );
+        const updatedUser = await Users.findByIdAndUpdate(id, 
+            { ...newUserData, updated_at: Date.now() }, 
+            { new: true, runValidators: true }
+        );
+
+        if (!updatedUser) {
+            throw createError(404, 'Document not found');
+        }    
 }
 
 module.exports = {
