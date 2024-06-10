@@ -51,7 +51,7 @@ npm run start
 Puedes iniciar el servidor en la siguiente URL;
 
 ```
-https://desafioapi-awef.onrender.com/user
+https://desafioapi-awef.onrender.com
 ```
 
 Esta URL te permitirá interactuar con la API.
