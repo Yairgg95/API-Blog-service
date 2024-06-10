@@ -2,6 +2,8 @@ const express = require('express')
 const postsUseCase = require('../usecases/posts.usecase')
 const auth = require('../middlewares/auth.middleware')
 
+const router = express.Router();
+
 router.post('/', auth, async (req, res) => {
     try {
         const userId = req.user._id; 

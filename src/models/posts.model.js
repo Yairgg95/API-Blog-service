@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const updateTimestamp = require('../middlewares/update.time.stamp.middelware')
+
 
 const modelName = 'posts'
 
@@ -38,6 +38,6 @@ const schema = new mongoose.Schema({
     }
 });
 
-updateTimestamp.updateTimestamp(schema);
 
-module.exports.model(modelName, schema);
+
+module.exports = mongoose.model(modelName, schema);
