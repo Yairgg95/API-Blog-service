@@ -62,7 +62,7 @@ async function getAll(search)  {
         query.title = { $regex: search, $options: 'i' }; 
     }
 
-    const documents = await Post.find(query);
+    const documents = await Post.find(query).populate("user");
     return documents;
 };
 

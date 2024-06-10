@@ -21,13 +21,12 @@ router.get('/:id', async (req,res) => {
 })
 
 
-router.delete('/:id', async (req, res) => {
-    const { id } = req.params;
+router.post('/', async (req, res) => {
     try {
-        const deletedUser = await usersUseCase.getById(id);
+        const createdUser = await usersUseCase.create(req.body);
         res.json({
             success: true,
-            data: { post: deletedUser},
+            data: { User: createdUser},
         })
     } catch (error) {
         res.status(error.status || 500);

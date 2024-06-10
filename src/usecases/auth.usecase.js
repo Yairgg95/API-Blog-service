@@ -10,7 +10,7 @@ async function login(email, password) {
         throw createError(401,'Invalid data')
     }
 
-    const isPasswordValid = await encrypt.compare(password, koder.password);
+    const isPasswordValid = await encrypt.compare(password, user.password);
     if (!isPasswordValid) {
         throw createError(401, 'Invalid data')
     }
