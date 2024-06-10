@@ -18,19 +18,13 @@ async function getById(id) {
     return user;
 }
 
-async function updatedById(id, newUserData) {
-        const updatedUser = await Users.findByIdAndUpdate(id, 
-            { ...newUserData, updated_at: Date.now() }, 
-            { new: true, runValidators: true }
-        );
-
-        if (!updatedUser) {
-            throw createError(404, 'Document not found');
-        }    
+async function getAll() {
+    const allUsers = await Users.find()
+    return allUsers
 }
 
 module.exports = {
     create,
     getById,
-    updatedById,
+    getAll,
 }
