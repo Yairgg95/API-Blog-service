@@ -4,6 +4,12 @@ const mongoose = require('mongoose');
 const modelName = 'users'
 
 const schema = new mongoose.Schema({
+    name:{
+        type: String,
+        required: true,
+        minLength: 2,
+        maxLength: 20,
+    },
     userName: {
         type: String,
         required: true,
