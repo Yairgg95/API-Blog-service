@@ -18,7 +18,6 @@ const schema = new mongoose.Schema({
     },
     profilePic: {
         type: String,
-        required: true,
         validate: {
             validator: function(v) {
                 return /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(v);
