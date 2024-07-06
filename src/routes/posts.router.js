@@ -77,4 +77,28 @@ router.get("/", async (req, res) => {
      }
 });
 
+router.get('/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const post = await postsUseCase.getById(id);
+        if (!post) {
+            return res.status(404).json({
+                success: false,
+                message: 'Post not found'
+            });
+        }
+        res.json({
+            success: true,
+            data: { post }
+        });
+    } catch (error) {
+        res.status(error.status || 500);
+        res.json({
+            success: false,
+            error: error.message,
+        });
+    }
+});
+
 module.exports = router;

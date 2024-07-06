@@ -66,10 +66,19 @@ async function getAll(search)  {
     return documents;
 };
 
+async function getById(id) {
+    try {
+        const post = await Post.findById(id).populate('user');
+        return post;
+    } catch (error) {
+        throw new Error('Error retrieving post');
+    }
+}
 
 module.exports = {
     create,
     getAll,
     deleteById,
     updateById,
+    getById
 }
