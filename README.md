@@ -14,7 +14,7 @@ Proyecto RESTful que puede utilizarse para una pagina similar a [dev.to](http://
 ```bash
 git clone git@github.com:Yairgg95/desafioAPI.git
 
-cd desafioAPI
+cd API-Blog-service
 ```
 
 2. Instala las dependencias:
